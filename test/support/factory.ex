@@ -12,8 +12,6 @@ defmodule Zix.Factory do
     %Zix.User{
       email: Internet.email(),
       password_hash: Bcrypt.hashpwsalt("password"),
-      confirmation_token: "97971cce-eb6e-418a-8529-e717ca1dcf62",
-      confirmed: true
     }
   end
 end
