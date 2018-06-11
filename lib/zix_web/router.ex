@@ -7,7 +7,7 @@ defmodule ZixWeb.Router do
   end
 
 
-  scope "/users", ReWeb do
+  scope "/users", ZixWeb do
     pipe_through(:api)
 
     post("/login", UserController, :login)

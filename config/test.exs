@@ -9,6 +9,7 @@ config :zix, ZixWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+
 # Configure your database
 config :zix, Zix.Repo,
   adapter: Ecto.Adapters.Postgres,
