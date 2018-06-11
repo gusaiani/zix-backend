@@ -23,7 +23,7 @@ defmodule Zix.User do
   """
   def create_changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, @create_required ++ @optional)
+    |> cast(params, @create_required)
     |> validate_required(@create_required)
     |> base_changeset()
     |> hash_password()
@@ -33,7 +33,6 @@ defmodule Zix.User do
     changeset
     |> validate_email()
     |> unique_constraint(:email)
-    |> validate_inclusion(:role, @roles, message: "should be one of: [#{Enum.join(@roles, " ")}]")
   end
 
   defp validate_email(changeset) do
