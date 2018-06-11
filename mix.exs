@@ -47,6 +47,8 @@ defmodule Zix.Mixfile do
       {:comeonin, "~> 3.2"},
       {:guardian, "~> 1.0"},
       {:timber, "~> 2.6"},
+      {:faker, "~> 0.9.0", only: :test},
+      {:email_checker, "~> 0.1"},
     ]
   end
 

@@ -5,7 +5,7 @@ defmodule Zix.Factory do
 
   use ExMachina.Ecto, repo: Zix.Repo
 
-  alias Faker.{Name, Address, Internet, Pokemon, Lorem.Shakespeare, Phone}
+  alias Faker.{Internet}
   alias Comeonin.Bcrypt
 
   def user_factory do
