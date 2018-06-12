@@ -32,12 +32,6 @@ defmodule Zix.Accounts.Users do
   end
 
   def create(params) do
-    params =
-      params
-      |> Map.put("role", "user")
-      |> Map.put("confirmation_token", UUID.uuid4())
-      |> Map.put("confirmed", false)
-
     %User{}
     |> User.create_changeset(params)
     |> Repo.insert()
