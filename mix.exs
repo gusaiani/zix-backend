@@ -20,7 +20,11 @@ defmodule Zix.Mixfile do
   def application do
     [
       mod: {Zix.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [
+        :logger,
+        :runtime_tools,
+        :timber,
+      ]
     ]
   end
 
@@ -38,7 +42,13 @@ defmodule Zix.Mixfile do
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:ex_machina, "~> 2.1", only: :test},
+      {:comeonin, "~> 3.2"},
+      {:guardian, "~> 1.0"},
+      {:timber, "~> 2.6"},
+      {:faker, "~> 0.9.0", only: :test},
+      {:email_checker, "~> 0.1"},
     ]
   end
 
