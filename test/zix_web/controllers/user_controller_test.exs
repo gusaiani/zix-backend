@@ -64,8 +64,6 @@ defmodule ZixWeb.UserControllerTest do
       assert response = json_response(conn, 201)
       assert response["user"]["token"]
       assert user = Repo.get_by(User, email: "validemail@emcasa.com")
-      assert user.confirmation_token
-      refute user.confirmed
     end
 
     test "fails when password is invalid", %{conn: conn} do
