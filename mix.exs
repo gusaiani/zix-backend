@@ -49,6 +49,7 @@ defmodule Zix.Mixfile do
       {:timber, "~> 2.6"},
       {:faker, "~> 0.9.0", only: :test},
       {:email_checker, "~> 0.1"},
+      {:cors_plug, "~> 1.2"},
     ]
   end
 

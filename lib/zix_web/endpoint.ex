@@ -35,6 +35,8 @@ defmodule ZixWeb.Endpoint do
     key: "_zix_key",
     signing_salt: "ya/sas/4"
 
+  plug(CORSPlug)
+
   plug ZixWeb.Router
 
   @doc """
