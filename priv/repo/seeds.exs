@@ -9,3 +9,18 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Zix.{
+  Repo,
+  User
+}
+
+alias Comeonin.Bcrypt
+
+Repo.delete_all(User)
+
+Repo.insert(%User{
+  email: "user@amazix.com",
+  password_hash: Bcrypt.hashpwsalt("password"),
+})
+
+
