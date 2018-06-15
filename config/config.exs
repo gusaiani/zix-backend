@@ -24,13 +24,13 @@ config :logger, :console,
 
 config :zix, ZixWeb.Guardian,
   allowed_algos: ["HS256"],
-  issuer: "Re",
+  issuer: "Zix",
   ttl: {30, :days},
   allowed_drift: 2000,
   # optional
   verify_issuer: true,
   secret_key: "MDLMflIpKod5YCnkdiY7C4E3ki2rgcAAMwfBl0+vyC5uqJNgoibfQmAh7J3uZWVK",
-  serializer: Re.GuardianSerializer
+  serializer: Zix.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
