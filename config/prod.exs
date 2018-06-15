@@ -10,7 +10,7 @@ config :zix, ZixWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :re, ZixWeb.Guardian,
+config :zix, ZixWeb.Guardian,
   allowed_algos: ["ES512"],
   secret_key: %{
     "alg" => "ES512",
