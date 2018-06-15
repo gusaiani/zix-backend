@@ -1,11 +1,5 @@
 use Mix.Config
 
-# For development, we disable any cache and enable
-# debugging and code reloading.
-#
-# The watchers configuration can be used to run external
-# watchers to your application. For example, we use it
-# with brunch.io to recompile .js and .css sources.
 config :zix, ZixWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
@@ -44,3 +38,15 @@ config :zix, Zix.Repo,
   database: "zix_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :zix, ZixWeb.Guardian,
+  allowed_algos: ["ES512"],
+  secret_key: %{
+    "alg" => "ES512",
+    "crv" => "P-521",
+    "d" => "AXRSCyICUQ7bWmC7BYrudxPGgtCRaPnIVvNWMD30cuhFFwku0DICJ3KiMC7lZ0JBXKzK3Rj1to8WA2wBZraQ3IYL",
+    "kty" => "EC",
+    "use" => "sig",
+    "x" => "AO5YOC7Pu9DeREGpI49Cv4aO3R605vIkrZnXIQx_g_1qsLUt7ZBBmlVbIpGu3pjmrTLtiobFiooi41ijvL7VoLOT",
+    "y" => "AKmsYBOmNJT2PkeLBzryoVC1lzjHNLkicWGGzSPGCjJkZNEEdq6K4_I7wiYM26kDLEaYwyLbrZen7qvBBDoJ6732"
+  }

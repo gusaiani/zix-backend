@@ -23,8 +23,21 @@ config :zix, ZixWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :re, ZixWeb.Guardian,
+  allowed_algos: ["ES512"],
+  secret_key: %{
+    "alg" => "ES512",
+    "crv" => "P-521",
+    "d" => System.get_env("GUARDIAN_D"),
+    "kty" => "EC",
+    "use" => "sig",
+    "x" => System.get_env("GUARDIAN_X"),
+    "y" => System.get_env("GUARDIAN_Y")
+  }
+
+
 config :re, Zix.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "18"),
   ssl: true
